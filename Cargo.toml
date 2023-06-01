@@ -1,0 +1,23 @@
+[package]
+name = "calendar-aqo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = {version ="0.5.0-rc.2", features = ["json"]}
+serde = {version = "1.0.152", features = ["derive"]}
+diesel = {version = "2.0.0", features = ["postgres","r2d2"]}
+dotenv = "0.15"
+
+
+[dependencies.rocket_dyn_templates]
+features = ["handlebars"]
+
+
+
+[dependencies.rocket_contrib]
+version = "0.4.4"
+default-features = false
+features = ["json"]
