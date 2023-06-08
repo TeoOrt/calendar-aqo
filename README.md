@@ -74,3 +74,21 @@ cargo run
 
 - /get_current_date GET
 - - This endpoint will get what times are available for customers to schedule an event.
+
+## Container
+
+In this docker container, we will create a system that will interface with the AWS RDS service and it will proxy to it
+
+In order for this cointainer to work you will need to add the following
+
+Postgres SQL variables, such as DB username and <i>DB password</i>.
+
+## Testing API
+
+To test your applicaiton working use this curl command to see if the request work properly
+
+```
+curl -X POST -H "Content-Type: application/json" -d '{"date":"2023-12-21", "time":"12:30","description":"Testng"}' http://localhost:8000/calendar
+
+
+```

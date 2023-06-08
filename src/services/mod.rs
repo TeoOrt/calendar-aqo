@@ -28,6 +28,12 @@ pub struct NewPost {
 
 type Result<T, E = Debug<diesel::result::Error>> = std::result::Result<T, E>;
 
+#[get("/test")]
+pub fn hello_world() -> &'static str {
+    "Hello World!"
+}
+
+// help me create
 #[post("/calendar", format = "json", data = "<post>")]
 pub fn create_post(post: Json<NewPost>) -> Result<Created<Json<NewPost>>> {
     // use self::schema::calendar::dsl::*;
@@ -47,7 +53,7 @@ pub fn create_post(post: Json<NewPost>) -> Result<Created<Json<NewPost>>> {
     //     .execute(connecting)
     //     .expect("Error saving new post");
 
-    schedule_event(new_post, connecting);
+    schedule_event(new_post, connecting).expect("Error saving new post");
     Ok(Created::new("/").body(post))
 }
 

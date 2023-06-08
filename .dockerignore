@@ -1,0 +1,7 @@
+* 
+
+!Cargo.toml
+!Rocket.toml
+!Cargo.lock
+!src/
+!migrations/
