@@ -2,4 +2,10 @@
 
 [global.databases]
 
-calendar_db = { url = "postgres://teo:MATEO@localhost/calendar"}
+calendar_db = { url = "{DATABASE_URL}"}
+
+
+[global]
+
+
+address = "0.0.0.0"
